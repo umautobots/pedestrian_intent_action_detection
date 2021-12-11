@@ -1,0 +1,1 @@
+from .relation_embedding import RelationEmbeddingNet as RelationNet

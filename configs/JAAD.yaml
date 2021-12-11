@@ -1,0 +1,8 @@
+PROJECT: 'intent2021icra_intent_action_JAADs'
+USE_WANDB: False
+CKPT_DIR: 'checkpoints/JAAD'
+OUT_DIR: 'outputs/JAAD'
+
+DATASET:
+  NAME: 'JAAD'
+  ROOT: 'data/JAAD'

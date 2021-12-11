@@ -1,0 +1,35 @@
+PROJECT: 'intent2021icra_intent_action'
+USE_WANDB: False
+CKPT_DIR: 'checkpoints/PIE'
+OUT_DIR: 'outputs/PIE'
+VISUALIZE: False
+MODEL:
+  TYPE: 'rnn'
+  TASK: 'action_intent_single'
+  ACTION_NET: 'gru_trn' #'I3D'
+  INTENT_NET: 'gru_trn' #'I3D'
+  INPUT_LAYER: 'avg_pool'
+  SEG_LEN: 30
+  INPUT_LEN: 15 # past 0.5 seconds
+  PRED_LEN: 5
+  ROI_SIZE: 7
+  POOLER_SCALES: (0.03125,)
+  POOLER_SAMPLING_RATIO: 0
+DATASET:
+  NUM_ACTION: 7
+  NUM_INTENT: 2
+  MIN_BBOX: [0, 0, 0, 0]
+  MAX_BBOX: [1920, 1080, 1920, 1080]
+  FPS: 30
+  OVERLAP: 0.9
+DATALOADER:
+  NUM_WORKERS: 16
+  WEIGHTED: 'intent'
+  ITERATION_BASED: True
+SOLVER:
+  MAX_EPOCH: 100
+  BATCH_SIZE: 128
+  LR: 0.00001
+  L2_WEIGHT: 0.001
+TEST:
+  BATCH_SIZE: 1

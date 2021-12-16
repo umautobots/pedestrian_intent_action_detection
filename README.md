@@ -19,12 +19,8 @@ ln -s /mnt/workspace/datasets/ data
 ln -s /mnt/workspace/users/PATH_TO_SAVE_OUTPUT output (optional)
 ln -s /mnt/workspace/users/PATH_TO_SAVE_CHECKPOINTS checkpoints (optional)
 ``` --> 
+
 2. Docker
-Run setup script
-```
-python setup.py build develop
-```
-3. Docker
 Build the docker image:
 ```
 cd pedestrian_intent_action_detection
@@ -41,6 +37,11 @@ This generates a CONTAINER_ID, then start container in interactive mode by
 
 ```
 docker start -a -i CONTAINER_ID
+```
+3. Run setup in the container.
+Run setup script
+```
+python setup.py build develop
 ```
 
 # Data
